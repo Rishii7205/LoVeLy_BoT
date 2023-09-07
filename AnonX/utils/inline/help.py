@@ -2,9 +2,6 @@ from typing import Union
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from AnonX import app
-from config import SUPPORT_GROUP
-
 
 def help_pannel(_, START: Union[bool, int] = None):
     first = [
@@ -26,58 +23,65 @@ def help_pannel(_, START: Union[bool, int] = None):
         [
             [
                 InlineKeyboardButton(
-                    text="ᴀᴅᴍɪɴ",
+                    text="💘ᴀᴅᴍɪɴ💘",
                     callback_data="help_callback hb1",
                 ),
                 InlineKeyboardButton(
-                    text="ᴀᴜᴛʜ",
+                    text="🌷ᴀᴜᴛʜ🌷",
                     callback_data="help_callback hb2",
                 ),
                 InlineKeyboardButton(
-                    text="ʙʟᴀᴄᴋʟɪsᴛ",
+                    text="🌹ʙʟᴀᴄʟɪsᴛ🌹",
                     callback_data="help_callback hb3",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="ʙʀᴏᴀᴅᴄᴀsᴛ",
+                    text="🌸ɢᴄᴀsᴛ🌸",
                     callback_data="help_callback hb4",
                 ),
                 InlineKeyboardButton(
-                    text="ɢʙᴀɴ",
+                    text="🍒ɢʙᴀɴ🍒",
                     callback_data="help_callback hb12",
                 ),
                 InlineKeyboardButton(
-                    text="ʟʏʀɪᴄs",
+                    text="🥰ʟʏʀɪᴄs🥰",
                     callback_data="help_callback hb5",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="ᴩɪɴɢ",
+                    text="✨ᴘɪɴɢ✨",
                     callback_data="help_callback hb7",
                 ),
                 InlineKeyboardButton(
-                    text="ᴩʟᴀʏ",
+                    text="⚡ᴘʟᴀʏ⚡",
                     callback_data="help_callback hb8",
                 ),
                 InlineKeyboardButton(
-                    text="ᴩʟᴀʏʟɪsᴛ",
+                    text="🎄ᴘ-ʟɪsᴛ🎄",
                     callback_data="help_callback hb6",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="ᴠɪᴅᴇᴏᴄʜᴀᴛs",
+                    text="💓ᴠ-ᴄᴀsᴛ💓",
                     callback_data="help_callback hb10",
                 ),
                 InlineKeyboardButton(
-                    text="sᴛᴀʀᴛ",
+                    text="❤sᴛᴀʀᴛ❤",
                     callback_data="help_callback hb11",
                 ),
                 InlineKeyboardButton(
-                    text="sᴜᴅᴏ",
+                    text="❣️sᴜᴅᴏ❣️",
                     callback_data="help_callback hb9",
+                ),
+            ],
+            [
+                InlineKeyboardButton(
+                    text="🌹ᴛᴀɢɢᴇʀ🌹",
+                    callback_data="help_callback hb13",
+                
                 ),
             ],
             mark,
@@ -96,10 +100,7 @@ def help_back_markup(_):
                 ),
                 InlineKeyboardButton(
                     text=_["CLOSE_BUTTON"], callback_data=f"close"
-                ),
-                InlineKeyboardButton(
-                    text="• sᴜᴩᴩᴏʀᴛ •", url=f"{SUPPORT_GROUP}"
-                ),
+                )
             ]
         ]
     )
@@ -110,8 +111,8 @@ def private_help_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["S_B_1"],
-                url=f"https://t.me/{app.username}?start=help",
+                text="⚡ ʜᴇʟᴘ ⚡",
+                callback_data="settings_back_helper",
             ),
         ],
     ]
