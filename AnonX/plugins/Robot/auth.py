@@ -1,5 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import Message
+##from pyrogram.enums import ParseMode
 
 from config import BANNED_USERS, adminlist
 from strings import get_command
@@ -51,7 +52,7 @@ async def auth(client, message: Message, _):
                 if user.id not in get:
                     get.append(user.id)
             await save_authuser(message.chat.id, token, assis)
-            await message.reply_sticker("CAACAgUAAxkBAAEGL3ljVl7DYB3yjmYIpmFwvSHJQ62HAwAChwUAAvMJCFSltu6gItnePCoE")
+            await message.reply_sticker("CAACAgUAAxkBAAIjRmKPXjN-4bwPCXyRDgQJi4EGns7mAALxBwACXqhRVO2OaCyX0hkNJAQ")
             return await message.reply_text("**» ᴀᴅᴅᴇᴅ ᴛᴏ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀs ʟɪsᴛ ᴏꜰ ʏᴏᴜʀ ɢʀᴏᴜᴘ.**")
         else:
             await message.reply_text("**» ᴀʟʀᴇᴀᴅʏ ɪɴ ᴛʜᴇ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀs ʟɪsᴛ.**")
@@ -79,7 +80,7 @@ async def auth(client, message: Message, _):
             if user_id not in get:
                 get.append(user_id)
         await save_authuser(message.chat.id, token, assis)
-        await message.reply_sticker("CAACAgUAAxkBAAEGL3ljVl7DYB3yjmYIpmFwvSHJQ62HAwAChwUAAvMJCFSltu6gItnePCoE")
+        await message.reply_sticker("CAACAgUAAxkBAAIjRmKPXjN-4bwPCXyRDgQJi4EGns7mAALxBwACXqhRVO2OaCyX0hkNJAQ")
         return await message.reply_text("**» ᴀᴅᴅᴇᴅ ᴛᴏ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀs ʟɪsᴛ ᴏꜰ ʏᴏᴜʀ ɢʀᴏᴜᴘ.**")
     else:
         await message.reply_text("**» ᴀʟʀᴇᴀᴅʏ ɪɴ ᴛʜᴇ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀs ʟɪsᴛ.**")
@@ -107,7 +108,7 @@ async def unauthusers(client, message: Message, _):
             if user.id in get:
                 get.remove(user.id)
         if deleted:
-            await message.reply_sticker("CAACAgUAAxkBAAEGL3ljVl7DYB3yjmYIpmFwvSHJQ62HAwAChwUAAvMJCFSltu6gItnePCoE")
+            await message.reply_sticker("CAACAgUAAxkBAAIjQWKPXN20bTyku-xHuWi1piQjwfnqAALVBAACkG4oV_eRTF-VyhGfJAQ")
             return await message.reply_text("**» ʀᴇᴍᴏᴠᴇᴅ ꜰʀᴏᴍ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀs ʟɪsᴛ ᴏꜰ ᴛʜɪs ɢʀᴏᴜᴘ.**")
         else:
             return await message.reply_text("**» ᴛᴀʀɢᴇᴛᴇᴅ ᴜsᴇʀ ɪs ɴᴏᴛ ᴀɴ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀ.**")
@@ -119,7 +120,7 @@ async def unauthusers(client, message: Message, _):
         if user_id in get:
             get.remove(user_id)
     if deleted:
-        await message.reply_sticker("CAACAgUAAxkBAAEGL3ljVl7DYB3yjmYIpmFwvSHJQ62HAwAChwUAAvMJCFSltu6gItnePCoE")
+        await message.reply_sticker("CAACAgUAAxkBAAIjQWKPXN20bTyku-xHuWi1piQjwfnqAALVBAACkG4oV_eRTF-VyhGfJAQ")
         return await message.reply_text("**» ʀᴇᴍᴏᴠᴇᴅ ꜰʀᴏᴍ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀs ʟɪsᴛ ᴏꜰ ᴛʜɪs ɢʀᴏᴜᴘ.**")
     else:
         return await message.reply_text("**» ᴛᴀʀɢᴇᴛᴇᴅ ᴜsᴇʀ ɪs ɴᴏᴛ ᴀɴ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀ.**")
@@ -131,26 +132,25 @@ async def unauthusers(client, message: Message, _):
     & ~filters.edited
     & ~BANNED_USERS
 )
-async def authusers(client, message: Message, _):
+async def authusers(_, message: Message):
     _playlist = await get_authuser_names(message.chat.id)
     if not _playlist:
-        return await message.reply_text("**» ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ... ꜰᴇᴛᴄʜɪɴɢ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀs !**")
+        return await message.reply_text("ɴᴏ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴜsᴇʀs ɪɴ ᴛʜɪs ᴄʜᴀᴛ.")
     else:
         j = 0
-        mystic = await message.reply_text("**» ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ... \n\nꜰᴇᴛᴄʜɪɴɢ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀs...**")
-        text = "**ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀs ʟɪsᴛ :**\n\n"
+        mystic = await message.reply_text("» ғᴇᴛᴄʜɪɴɢ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴜsᴇʀs ʟɪsᴛ...")
+        text = f"» ʟɪsᴛ ᴏғ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴜsᴇʀs ɪɴ {message.chat.title} :\n\n"
         for note in _playlist:
             _note = await get_authuser(message.chat.id, note)
             user_id = _note["auth_user_id"]
             admin_id = _note["admin_id"]
             admin_name = _note["admin_name"]
             try:
-                user = await app.get_users(user_id)
-                user = user.first_name
+                user = (await app.get_users(user_id)).first_name
                 j += 1
-            except Exception:
+            except:
                 continue
-            text += f"{j}➤ {user}[`{user_id}`]\n"
-            text += f"   {'┗ ᴀᴅᴅᴇᴅ ʙʏ :-'} {admin_name}[`{admin_id}`]\n\n"
+            text += f"{j}➤ {user}[<code>{user_id}</code>]\n"
+            text += f"   <b>↬ ᴀᴅᴅᴇᴅ ʙʏ :</b> {admin_name}[<code>{admin_id}</code>]\n\n"
         await mystic.delete()
         await message.reply_text(text)

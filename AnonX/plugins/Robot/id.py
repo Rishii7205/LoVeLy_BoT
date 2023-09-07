@@ -52,3 +52,4 @@ async def showid(_, message: Message):
                 f"<code>{file_info.file_id}</code>\n"
             )
         await message.reply_text(_id)
+

@@ -59,7 +59,7 @@ async def helper_private(
         language = await get_lang(chat_id)
         _ = get_string(language)
         keyboard = help_pannel(_)
-        await update.reply_sticker("CAACAgUAAxkBAAECsn1kOUfJdJQ0Y-y8Ab2HPPYDz8dUZAAC9ggAAmXzyFV-diC545uQBS8E")
+        await update.reply_sticker("CAACAgUAAxkBAAIjVmKPYTFByKZlCo9d8mUv8QVAJEw7AAL9BQACiy14VGoQxOCDfE1KJAQ")
         await update.reply_photo(
             photo=config.START_IMG_URL,
             caption=_["help_1"].format(config.SUPPORT_HEHE), reply_markup=keyboard)
@@ -89,7 +89,7 @@ async def helper_cb(client, CallbackQuery, _):
     if cb == "hb9":
         if CallbackQuery.from_user.id not in SUDOERS:
             return await CallbackQuery.answer(
-                "ʜᴀᴀɴ ᴀᴀᴊᴀ ʙsᴅᴋ ʟᴜɴᴅ ʟᴇʟᴇ ᴍᴇʀᴀ.\n\nᴊʜᴀᴀᴛ ʙᴀʀᴀᴀʙᴀʀ ᴅɪᴍᴀᴀɢ ʜᴀɪ ɴᴀʜɪ ᴀᴜʀ ᴏᴡɴᴇʀ ʙᴀɴᴇɴɢᴇ.", show_alert=True
+                "This button is only for sudoers.", show_alert=True
             )
         else:
             await CallbackQuery.edit_message_text(
@@ -143,4 +143,8 @@ async def helper_cb(client, CallbackQuery, _):
     elif cb == "hb12":
         await CallbackQuery.edit_message_text(
             helpers.HELP_12, reply_markup=keyboard
+        )
+    elif cb == "hb13":
+        await CallbackQuery.edit_message_text(
+            helpers.HELP_13, reply_markup=keyboard
         )
