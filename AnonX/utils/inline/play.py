@@ -38,7 +38,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{played} •{bar}• {dur}",
+                text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
         ],
@@ -51,6 +51,9 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 text="II", callback_data=f"ADMIN Pause|{chat_id}"
             ),
             InlineKeyboardButton(
+                text="☆", callback_data=f"add_playlist {videoid}"
+            ),
+            InlineKeyboardButton(
                 text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
             ),
             InlineKeyboardButton(
@@ -59,16 +62,20 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text="🎁 ᴍᴇɴᴜ ",
-                callback_data=f"PanelMarkup {videoid}|{chat_id}",
+                text="💘ᴜᴘᴅᴀᴛᴇs💘", url="https://t.me/loveguruoo"
             ),
+        
             InlineKeyboardButton(
-                text="👑 ᴏᴡɴᴇʀ ", url=f"https://t.me/II_ASHISH_GUPTA_IIl"
-            )
-        ],
+                text="💘sᴜᴘᴘᴏʀᴛ💘", url="https://t.me/RICH_OF_HEART"
+            ),
+        ],    
         [
             InlineKeyboardButton(
-                text=_["CLOSEMENU_BUTTON"], url=f"https://t.me/BWF_MUSIC1"
+                text="🖤ᴏᴡɴᴇʀ🖤", url="https://t.me/loveguruo"
+            ),
+        
+            InlineKeyboardButton(
+                text="🌹 ᴄʟᴏsᴇ 🌹", callback_data=f"close"
             )
         ],
     ]
